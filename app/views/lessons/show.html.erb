@@ -11,7 +11,21 @@
 </p>
 
 <p>
-  <%= link_to "Delete this lesson", lesson_path,
+  <%= link_to "Delete this lesson", lesson_path(),
                                     :data => {:confirm => "are you sure",
                                               :method => "delete"}%>
 </p>
+
+
+
+  <p>
+    <%= link_to "previous", lesson_path(Lesson.find_by(:number => @lesson.number - 1)) %>
+  </p>
+
+
+  <p>
+    <%= link_to "next", lesson_path(Lesson.find_by(:number => @lesson.number + 1)) %>
+  </p>
+
+
+</div>

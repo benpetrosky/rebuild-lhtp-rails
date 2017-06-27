@@ -5,6 +5,23 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+
+    if @lesson === Lesson.all.last
+
+      render :end
+    elsif @lesson === Lesson.all.first
+      render :first
+
+    else
+      render :show
+    end
+  end
+
+  def next
+    @current_lesson = Lesson.find(params[:id])
+    @lesson_number = @current_lesson.number + 1
+    @lesson = Lesson.find_by(:number => @lesson_number)
+    render :show
   end
 
   def edit
