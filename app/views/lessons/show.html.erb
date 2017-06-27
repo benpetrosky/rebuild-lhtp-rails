@@ -22,10 +22,10 @@
     <%= link_to "previous", lesson_path(Lesson.find_by(:number => @lesson.number - 1)) %>
   </p>
 
-
+<% if @lesson.number + 1 %>
   <p>
     <%= link_to "next", lesson_path(Lesson.find_by(:number => @lesson.number + 1)) %>
   </p>
-
+<% end %>
 
 </div>
