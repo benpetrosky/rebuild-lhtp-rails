@@ -1,0 +1,17 @@
+<h1> <%= @lesson.name %> </h1>
+
+<h4><%= @lesson.content %></h4>
+
+<p>
+  <%= link_to "Return to Lessons", lessons_path %>
+</p>
+
+<p>
+  <%= link_to "Edit this lesson", edit_lesson_path %>
+</p>
+
+<p>
+  <%= link_to "Delete this lesson", lesson_path,
+                                    :data => {:confirm => "are you sure",
+                                              :method => "delete"}%>
+</p>
